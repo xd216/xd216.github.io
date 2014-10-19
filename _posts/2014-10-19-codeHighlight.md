@@ -3,7 +3,7 @@ layout: default
 title: 代码高亮
 ---
 
-<pre><code>
+<pre><code class="language-c">
 int main(int argc, char *argv[])
 {
 	puts("Hello world.");
@@ -12,11 +12,11 @@ int main(int argc, char *argv[])
 }
 </code></pre>
 
-``
+`
 int main(int argc, char *argv[])
 {
 	puts("Hello world.");
 
 	return 0;
 }
-``
+`
