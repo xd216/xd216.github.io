@@ -7,7 +7,7 @@ Jekyll的核心其实就是一个文本的转换引擎，用你最喜欢的标�
 
 基本的Jekyll结构如下：
 
-![jekyii struture](images/jekyii.png)
+![jekyii struture](../images/jekyii.png)
 
 简单介绍一下他们的作用：
 
