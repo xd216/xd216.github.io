@@ -19,7 +19,7 @@ body {
 }
 
 .wrapper {
-  width: 800px;
+  width: 75%;
   margin: 0 auto;
   background: #DEDEDE;
   -webkit-border-radius: 8px;
@@ -139,10 +139,11 @@ header ul:before {
   box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0, inset rgba(255, 255, 255, 0.7) 0 -1px 0;
 }
 header ul li {
+  font-size:16px;
   width: 79px;
   float: left;
   border-right: 1px solid #3A7CBE;
-  height: 38px;
+  height: 40px;
 }
 header ul li.single {
   border: none;
@@ -191,7 +192,15 @@ section {
   border-radius: 0 0 8px 8px;
   position: relative;
 }
-
+section #leftsidebar{
+	width:30%;
+	float:left;
+	margin-right:10px;
+}
+section #center_posts{
+	width:65%;
+	float:right;
+}
 h1, h2, h3, h4, h5, h6 {
   color: #222;
   padding: 0;
