@@ -192,7 +192,15 @@ section {
   border-radius: 0 0 8px 8px;
   position: relative;
 }
-
+section #leftsidebar{
+	width:30%;
+	float:left;
+	margin-right:10px;
+}
+section #center_posts{
+	width:65%;
+	float:right;
+}
 h1, h2, h3, h4, h5, h6 {
   color: #222;
   padding: 0;
