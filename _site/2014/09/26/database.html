@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>xd216Lab|Blog</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <script src="/javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://xd216.github.io">xd216 Lab Blog</a></h1>
+        <p>文艺搞不好，只能搞技术</p>
+        <p class="view"><a href="https://github.com/xd216/xd216.github.io">View the Project on GitHub <small>xd216</small></a></p>
+        <ul>
+          <li>
+		<a href="https://github.com/xd216/xd216.github.io">
+			View On <strong>GitHub</strong>
+		</a>
+	    </li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
+sed简介 
+        </h1>
+<h2>范式</h2>
+
+<h3>第一范式(1NF)</h3>
+
+<p>数据库中的每个属性都包含一个原子性数据，不可再分割，不可包含多个值。</p>
+
+<p>例如，下面几个就包含了 <strong>非原子性</strong> 数据。</p>
+
+<p>下面这个例子，id 为 3 时，number 中包含了两个数据</p>
+
+<p>| id | number |
+|----|--------|
+| 1  | 210 |
+| 3  | 320 860 |</p>
+
+<p>又例如, 下面的表中，地址包含了街道号和街道名</p>
+
+<p>|name|address|
+|----|-------|
+|tom| 59 N. Ajax Rapids |</p>
+
+<h3>第二范式(2NF)</h3>
+
+<p>第二范式首先要满足第一范式，其次要求没有部分函数依赖。部分函数依赖是指，非主键的列依赖于组合主键的某个部分，但不是完全
+依赖于组合主键。</p>
+
+<p>例如 </p>
+
+<p>| id | course | name | score |
+|----|--------|------|-------|
+| 1  |  math  | kay  | 100   |</p>
+
+<p>假如上面这个表中，(id, course) 为组合主键，那么这个表不满足第二范式，因为 name 仅仅依赖于组合主键中的 id.</p>
+
+<h3>第三范式(3NF)</h3>
+
+<p>第三范式首先要满足第二范式，其次要求没有传递函数依赖。传递依赖是指任何非键列与另一个非键列有关联。</p>
+
+<p>例如 </p>
+
+<p>| name | enemy<em>id | enemy</em>name |
+|------|----------|------------|
+| tom | 1 | jack |</p>
+
+<p>name 是主键，但是非主键的 enemy<em>id 的改变会造成 enemy</em>name 的改变，因此，表中存在传递函数依赖。不满足第三范式。</p>
+
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/minixalpha">minixalpha</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+  </body>
+</html>

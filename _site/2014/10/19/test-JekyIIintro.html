@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>xd216Lab|Blog</title>
+
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <script src="/javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://xd216.github.io">xd216 Lab Blog</a></h1>
+        <p>文艺搞不好，只能搞技术</p>
+        <p class="view"><a href="https://github.com/xd216/xd216.github.io">View the Project on GitHub <small>xd216</small></a></p>
+        <ul>
+          <li>
+		<a href="https://github.com/xd216/xd216.github.io">
+			View On <strong>GitHub</strong>
+		</a>
+	    </li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
+JekyII简介 
+        </h1>
+<p>Jekyll的核心其实就是一个文本的转换引擎，用你最喜欢的标记语言写文档，可以是Markdown、Textile或者HTML等等，再通过<code>layout</code>将文档拼装起来，根据你设置的URL规则来展现，这些都是通过严格的配置文件来定义，最终的产出就是web页面。</p>
+
+<p>基本的Jekyll结构如下：</p>
+
+<p><img src="/images/jekyii.png" alt="jekyii struture"></p>
+
+<p>简单介绍一下他们的作用：</p>
+
+<p><strong>_config.yml</strong></p>
+
+<p>配置文件，用来定义你想要的效果，设置之后就不用关心了。</p>
+
+<p><strong>_includes</strong></p>
+
+<p>可以用来存放一些小的可复用的模块，方便通过<code>{ % include file.ext %}</code>灵活的调用。这条命令会调用_includes/file.ext文件。</p>
+
+<p><strong>_layouts</strong></p>
+
+<p>这是模板文件存放的位置。</p>
+
+<p><strong>_posts</strong></p>
+
+<p>你的动态内容，一般来说就是你的博客正文存放的文件夹。他的命名有严格的规定，必须是<code>2012-02-22-artical-title.MARKUP</code>这样的形式，MARKUP是你所使用标记语言的文件后缀名，根据_config.yml中设定的链接规则，可以根据你的文件名灵活调整，文章的日期和标记语言后缀与文章的标题的独立的。</p>
+
+<p><strong>_site</strong></p>
+
+<p>这个是Jekyll生成的最终的文档，不用去关心。最好把他放在你的<code>.gitignore</code>文件中忽略它。</p>
+
+<p><strong>其他文件夹</strong></p>
+
+<p>你可以创建任何的文件夹，在根目录下面也可以创建任何文件，假设你创建了<code>project</code>文件夹，下面有一个<code>github-pages.md</code>的文件，那么你就可以通过<code>yoursite.com/project/github-pages</code>访问的到，如果你是使用一级域名的话。文件后缀可以是<code>.html</code>或者<code>markdown</code>或者<code>textile</code>。</p>
+
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/minixalpha">minixalpha</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+  </body>
+</html>

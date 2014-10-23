@@ -1,4 +1,4 @@
 baseurl:
 markdown: redcarpet
 safe: false
-pygments: true
+highlighter: pygments

@@ -1,11 +1,12 @@
 ---
 layout: default
-title: <nav><ul><li><a href="">C/C++</a></li><li>Java</li><li>Python</li></ul></nav>
+title: <nav><ul><li><a href="#">C/C++</a></li><li>Java</li><li>Python</li></ul></nav>
 ---
-
-<ul class="post-list">
+<section id="post-list">
+<ul>
 				{% for post in site.posts %}
-			<a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a>
-				{{ post.date | date: "%F" }} <br>
+			<li><a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a>
+				{{ post.date | date: "%F" }} </li>
 				{% endfor %}
 			</ul>
+</section>
