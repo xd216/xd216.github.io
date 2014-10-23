@@ -6,7 +6,7 @@
     <title>xd216Lab|Blog</title>
 
     <link rel="stylesheet" href="{{site.baseurl}}/stylesheets/styles.css">
-    
+    <link rel="stylesheet" href="{{site.baseurl}}/stylesheets/pygment_trac.css">
 		<link rel="stylesheet" href="{{site.baseurl}}/stylesheets/prism.css">
     <script src="{{site.baseurl}}/javascripts/scale.fix.js"></script>
 		<script src="{{site.baseurl}}/javascripts/prism.js"></script>
