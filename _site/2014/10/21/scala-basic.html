@@ -27,22 +27,53 @@
         <section id="main-content">        
         <h1>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
-Articles 
+scala基础 
         </h1>
-<section id="post-list">
+<h2>常量与变量</h2>
+
 <ul>
-				
-			<li><a href="/2014/10/21/scala-basic.html"> scala基础  </a>
-				2014-10-21</li>
-				
-			<li><a href="/2014/10/19/test-JekyIIintro.html"> JekyII简介  </a>
-				2014-10-19</li>
-				
-			<li><a href="/2014/10/19/Install-Ruby-on-Ubuntu.html"> Ubuntu中安装Ruby  </a>
-				2014-10-19</li>
-				
-			</ul>
-</section>
+<li>常量：val answer = 8*5+2 无法改变其值</li>
+<li>变量：var question = &quot;1+1=2?&quot; 可以改变其值</li>
+</ul>
+
+<p><strong>在scala中更鼓励使用val</strong></p>
+
+<h2>数据类型</h2>
+
+<p>有7种：Byte,Char,Short,Int,Long,Float,Double,Boolean。</p>
+
+<p>scala中的所有类型都是类，类型不区分基本类型和引用类型。</p>
+
+<p>一般情况下不需要给出常量或变量的类型，scala是通过初始化表达式自动推断类型的。</p>
+
+<p>必要情况下可以指定类型，在变量或函数名称<strong>之后</strong>。
+如：val greeting:String = null</p>
+
+<h2>方法的特殊风格</h2>
+
+<p>a+b中的+是方法名，等价于：a.+(b)</p>
+
+<p>所以在scala中可以有两种风格的方法调用：</p>
+
+<ul>
+<li>a.方法（b）</li>
+<li>a 方法 b</li>
+</ul>
+
+<h2>函数与方法</h2>
+
+<p>scala提供了方法，还提供函数。函数不需要从某个类调用他的静态方法。</p>
+
+<ul>
+<li>sqrt(2)</li>
+<li>pow(2,4)</li>
+<li>min(2,3)</li>
+</ul>
+
+<p>需要引入数学函数包 import math._</p>
+
+<p>scala没有静态方法，而是提供<strong>单例对象</strong>的特性。</p>
+
         </section>
 
         <aside id="sidebar">
