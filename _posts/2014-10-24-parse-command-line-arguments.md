@@ -1,16 +1,16 @@
 ---
 layout: default
+title: 命令行选项解析getopt
 ---
-###命令行选项解析getopt
 
-####函数原型：
+###函数原型：
 `int getopt (int argc, char *const *argv, const char *options)`
 
-####外部变量：
+###外部变量：
 `extern char *optarg;`
 `extern int optind, opterr, optopt;`
 
-####参数含义：
+###参数含义：
 -命令行参数中以`-`开头的参数称为选项（option）
 -参数`options`指定了合法的命令行选项列表（单字母）
 -如果某个选项字母用分号`:`结尾，则表示该选项要求带参数（双冒号`::`则表示参数可选）
