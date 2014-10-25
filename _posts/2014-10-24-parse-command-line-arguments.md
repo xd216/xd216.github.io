@@ -4,15 +4,15 @@ title: 利用getopt函数对命令行参数进行解析
 ---
 
 ###函数原型：
-{% prism c %}
+```c
 int getopt (int argc, char *const *argv, const char *options)
-{% endprism %}
+```
 
 ###外部变量：
-{% prism c %}
+```c
 extern char *optarg;
 extern int optind, opterr, optopt;
-{% endprism %}
+```
 
 ###参数含义：
 * 命令行参数中以`-`开头的参数称为选项（option）

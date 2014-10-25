@@ -33,11 +33,10 @@ ubuntu 14.10 安装搜狗输入法的问题
 
 <ul>
 <li>原因：<code>ubuntu</code>自带的输入法框架为<code>ibus</code>,而搜狗输入法只能运行在<code>fcltx</code>框架上</li>
-<li><p>方法：安装<code>fcitx</code>框架：
-<div>
-<pre data-line=''><code class='language-bash'>sudo apt-add-reposity ppa:fcitx-team/nightly
-sudo apt-get update</code></pre>
-</div></p></li>
+<li><p>方法：安装<code>fcitx</code>框架：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> sudo apt-add-reposity ppa:fcitx-team/nightly
+<span class="gp">$</span> sudo apt-get update
+</code></pre></div></li>
 <li><p>在“软件中心”搜索<code>fcitx</code>，安装即可</p></li>
 </ul>
 
@@ -46,10 +45,9 @@ sudo apt-get update</code></pre>
 <ul>
 <li>此时即使按照其提示重启输入法，可能依然没有效果。</li>
 <li>原因是<code>sogou-qimpanel</code>取代了<code>fcitx-qimpanel</code>,需要手动启动<code>sogou-qimpanel</code>。</li>
-<li>为了方便，可以将<code>sogou-qimpanel</code>加入自启动项，执行以下命令：
-<div>
-<pre data-line=''><code class='language-bash'>sudo ln -s /usr/bin/sogou-qimpanel /etc/init.d/sogou-qimpanel</code></pre>
-</div></li>
+<li><p>为了方便，可以将<code>sogou-qimpanel</code>加入自启动项，执行以下命令：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> sudo ln -s /usr/bin/sogou-qimpanel /etc/init.d/sogou-qimpanel
+</code></pre></div></li>
 </ul>
 
         </section>
