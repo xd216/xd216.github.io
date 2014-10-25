@@ -27,5 +27,5 @@ extern int optind, opterr, optopt;
 * `getopt`的返回值为下一个待处理的选项字母，如果没有更多的选项字母可供处理，则返回`-1`（此时可能有不止一个非选项参数待处理，最好检查`optind`和`argc`的值以确定其数量）
 
 ###参考：
-- http://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html#Using-Getopt
-- http://man7.org/linux/man-pages/man3/getopt.3.html
+- [http://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html#Using-Getopt](http://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html#Using-Getopt)
+- [http://man7.org/linux/man-pages/man3/getopt.3.html](http://man7.org/linux/man-pages/man3/getopt.3.html)
