@@ -553,13 +553,13 @@ code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #222;
   margin-bottom: 30px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 code {
   background-color: #f2f8fc;
   border: solid 1px #dbe7f3;
-  padding: 0 3px;
+  padding: 0 4px;
 }
 
 pre {
