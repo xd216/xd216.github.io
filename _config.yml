@@ -1,4 +1,3 @@
 baseurl:
 markdown: redcarpet
-safe: false
 highlighter: pygments
