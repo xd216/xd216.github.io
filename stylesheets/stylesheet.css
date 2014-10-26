@@ -235,7 +235,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 /* Forms
@@ -553,10 +553,11 @@ code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #222;
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 code {
+  font-size:18px;
   background-color: #f2f8fc;
   border: solid 1px #dbe7f3;
   padding: 0 4px;
@@ -570,6 +571,7 @@ pre {
   border: solid 1px #f2f2f2;
 }
 pre code {
+  font-size:18px;
   color: #2879d0;
   background-color: #fff;
   border: none;

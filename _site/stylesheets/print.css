@@ -42,7 +42,7 @@ table {
   border-spacing: 0;
 }
 body {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5; 
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   color: #000;
@@ -84,11 +84,12 @@ code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   color: #222;
   margin-bottom: 30px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 code {
-  padding: 0 3px;
+  padding: 0 6px;
+  font-size:16px;
 }
 
 pre {
@@ -97,7 +98,8 @@ pre {
   overflow: auto;
 }
 pre code {
-  padding: 0;
+  padding: 4px;
+  font-size:16px;
 }
 
 ul, ol, dl {
