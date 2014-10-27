@@ -1,0 +1,21 @@
+---
+layout: default
+title: grails 修改运行时服务器端口
+---
+
+###在命令行使用-Dserver.port=xxxx指定运行端口
+
+因为grails默认配置的端口时是8080,往往与系统中的web服务器(如tomcat)冲突,所以可以在运行时使用命令行修改服务器端口
+
+```console
+grails -Dserver.port=9000 run-app
+```
+
+###为项目自定义运行端口
+
+在`grails-app/conf`目录下,新建/修改`BuildConfig.groovy`,加一行:
+
+```console
+grails.server.port.http = 9000
+```
+
