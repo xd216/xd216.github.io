@@ -24,34 +24,28 @@
         <section id="main-content">        
         <h1>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
-Articles 
+bash数组的使用 
         </h1>
-<section id="post-list">
-<ul>
-				
-			<li><a href="/2014/10/27/bash-basic.html"> bash基础  </a>
-				2014-10-27</li>
-				
-			<li><a href="/2014/10/27/bash-array.html"> bash数组的使用  </a>
-				2014-10-27</li>
-				
-			<li><a href="/2014/10/25/install-sogou-on-ubuntu-14-10.html"> ubuntu 14.10 安装搜狗输入法的问题  </a>
-				2014-10-25</li>
-				
-			<li><a href="/2014/10/24/parse-command-line-arguments.html"> 利用getopt函数对命令行参数进行解析  </a>
-				2014-10-24</li>
-				
-			<li><a href="/2014/10/21/scala-basic.html"> scala基础  </a>
-				2014-10-21</li>
-				
-			<li><a href="/2014/10/19/test-JekyIIintro.html"> JekyII简介  </a>
-				2014-10-19</li>
-				
-			<li><a href="/2014/10/19/Install-Ruby-on-Ubuntu.html"> Ubuntu中安装Ruby  </a>
-				2014-10-19</li>
-				
-			</ul>
-</section>
+<p>利用<code>ls</code>命令的输出构建数组时，有两种写法：</p>
+
+<ol>
+<li><code>array=$(ls)</code></li>
+<li><code>array=($(ls))</code></li>
+</ol>
+
+<p>两者都可以用<code>for</code>循环迭代处理，对应的循环体如下所示：</p>
+
+<ol>
+<li><code>for filename in $array</code></li>
+<li><code>for filename in ${array[@]}</code></li>
+</ol>
+
+<p>因为前者的<code>array</code>为一个整体（一般是空格分隔），而后者的<code>array</code>是一个数组。换句话说，后者可以用索引值取出单独的某个元素，而前者不可以。</p>
+
+<blockquote>
+<p>注意：对前者的<code>array</code>进行loop时，其元素分隔符由IFS指定，默认为<code>tab</code>,<code>space</code>和<code>newline</code>.</p>
+</blockquote>
+
         </section>
 
         <aside id="sidebar">

@@ -24,34 +24,42 @@
         <section id="main-content">        
         <h1>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
-Articles 
+bash基础 
         </h1>
-<section id="post-list">
+<h3>变量的测试和替换</h3>
+
 <ul>
-				
-			<li><a href="/2014/10/27/bash-basic.html"> bash基础  </a>
-				2014-10-27</li>
-				
-			<li><a href="/2014/10/27/bash-array.html"> bash数组的使用  </a>
-				2014-10-27</li>
-				
-			<li><a href="/2014/10/25/install-sogou-on-ubuntu-14-10.html"> ubuntu 14.10 安装搜狗输入法的问题  </a>
-				2014-10-25</li>
-				
-			<li><a href="/2014/10/24/parse-command-line-arguments.html"> 利用getopt函数对命令行参数进行解析  </a>
-				2014-10-24</li>
-				
-			<li><a href="/2014/10/21/scala-basic.html"> scala基础  </a>
-				2014-10-21</li>
-				
-			<li><a href="/2014/10/19/test-JekyIIintro.html"> JekyII简介  </a>
-				2014-10-19</li>
-				
-			<li><a href="/2014/10/19/Install-Ruby-on-Ubuntu.html"> Ubuntu中安装Ruby  </a>
-				2014-10-19</li>
-				
-			</ul>
-</section>
+<li><code>var=${str-expr}</code> </li>
+</ul>
+
+<blockquote>
+<p>若str没有设置，则将<code>var</code>设置为expr；若str已设置（包括空字符串），则将<code>var</code>设置为<code>str</code></p>
+</blockquote>
+
+<ul>
+<li><code>var=${str=expr}</code></li>
+</ul>
+
+<blockquote>
+<p>若<code>str</code>未设置，则将<code>str</code><strong>也</strong>设置为<code>expr</code></p>
+</blockquote>
+
+<ul>
+<li><code>var=${str?msg}</code></li>
+</ul>
+
+<blockquote>
+<p>若<code>str</code>未设置，则显示出错信息msg</p>
+</blockquote>
+
+<h3>数组</h3>
+
+<ul>
+<li><code>arrayname[index]=value</code> 隐式声明</li>
+<li><code>declare -a arrayname</code> 显示声明</li>
+<li><code>arrayname=(value1 value2 ... valueN)</code> 显示初始化；其中value的一般形式为<code>[index=]value</code>，<code>index</code>是可选的，若不指定则索引值将递增赋值</li>
+</ul>
+
         </section>
 
         <aside id="sidebar">

@@ -1,0 +1,23 @@
+---
+layout: default
+title: bash基础
+---
+
+###变量的测试和替换
+* `var=${str-expr}` 
+
+  > 若str没有设置，则将`var`设置为expr；若str已设置（包括空字符串），则将`var`设置为`str`
+
+* `var=${str=expr}`
+
+  > 若`str`未设置，则将`str`**也**设置为`expr`
+
+* `var=${str?msg}`
+
+  > 若`str`未设置，则显示出错信息msg
+
+
+###数组
+* `arrayname[index]=value` 隐式声明
+* `declare -a arrayname` 显示声明
+* `arrayname=(value1 value2 ... valueN)` 显示初始化；其中value的一般形式为`[index=]value`，`index`是可选的，若不指定则索引值将递增赋值
