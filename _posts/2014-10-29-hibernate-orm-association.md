@@ -7,15 +7,18 @@ title: hibernate ORM 关联关系映射-基础
 
 ##ManyToOne和OneToOne
 
-@ManyToOne: 若干个实体都可以指向目标实体. **不同于OneToMany之处在于所站的角度不同,映射成的数据库表结构是相同的**
+`@ManyToOne`: 若干个实体都可以指向目标实体. **不同于OneToMany之处在于所站的角度不同,映射成的数据库表结构是相同的**
 
-@OneToOne: 只有一个实体可以指向目标实体.
+`@OneToOne`: 只有一个实体可以指向目标实体.
 
 单向:只能从拥有者指向被拥有者.
 
-在数据库中是以外键的形式被映射的.owning中有一个引用owned主键的外键.本例中是:Person中有一个名为`Address_Id`的外键.
+在数据库中是以外键的形式被映射的.
+
+owning中有一个引用owned主键的外键.本例中是:Person中有一个名为`Address_Id`的外键.
 
 **Owning side**
+
 ```java
 @Entity 
  public class Person implements Serializable { 
@@ -61,6 +64,7 @@ title: hibernate ORM 关联关系映射-基础
 
  }
 ```
+
 ##OneToMany
 
 一对多关联关系,在数据库中默认以中间表的方式映射,也可以使用外键的方式.
