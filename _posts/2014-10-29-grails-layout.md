@@ -3,7 +3,7 @@ layout: default
 title: 使用Grails layout创建页面模版,统一页面风格
 ---
 
-###创建模版
+##创建模版
 
 ```html
 <html>
@@ -21,11 +21,11 @@ title: 使用Grails layout创建页面模版,统一页面风格
 </html>
 ```
 
-#有三个关键元素#:`layoutTitle`,`layoutHead`,`layoutBody`,分别输出目标页的title,head标签中的内容,body标签的内容.
+###有三个关键元素:`layoutTitle`,`layoutHead`,`layoutBody`,分别输出目标页的title,head标签中的内容,body标签的内容.
 
-###使用模版
+##使用模版
 
-####单页面使用模版
+###单页面使用模版
 
 ```html
 <html>
@@ -37,7 +37,7 @@ title: 使用Grails layout创建页面模版,统一页面风格
 </html>
 ```
 
-####整个Controller涉及的页面统一使用模版
+###整个Controller涉及的页面统一使用模版
 
 ```groovy
 class BookController {
@@ -48,7 +48,7 @@ class BookController {
 
 此代码表示BookController下的gsp页面将使用`grails-app/views/layouts/custom/customer.gsp` 作为模版.
 
-####按`约定优于配置原则`使用模版
+###按`约定优于配置原则`使用模版
 
 ```groovy
 class BookController{
