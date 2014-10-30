@@ -1,0 +1,26 @@
+<h3 id="fcitx">1. <code>fcitx</code>依赖关系不满足</h3>
+<ul>
+  <li>原因：<code>ubuntu</code>自带的输入法框架为<code>ibus</code>,而搜狗输入法只能运行在<code>fcltx</code>框架上</li>
+  <li>
+    <p>方法：安装<code>fcitx</code>框架：</p>
+
+    <p><code>console
+$ sudo apt-add-reposity ppa:fcitx-team/nightly
+$ sudo apt-get update
+</code></p>
+  </li>
+  <li>在“软件中心”搜索<code>fcitx</code>，安装即可</li>
+</ul>
+
+<h3 id="section">2.搜狗面板程序加载失败</h3>
+<ul>
+  <li>此时即使按照其提示重启输入法，可能依然没有效果。</li>
+  <li>原因是<code>sogou-qimpanel</code>取代了<code>fcitx-qimpanel</code>,需要手动启动<code>sogou-qimpanel</code>。</li>
+  <li>
+    <p>为了方便，可以将<code>sogou-qimpanel</code>加入自启动项，执行以下命令：</p>
+
+    <p><code>console
+$ sudo ln -s /usr/bin/sogou-qimpanel /etc/init.d/sogou-qimpanel
+</code></p>
+  </li>
+</ul>

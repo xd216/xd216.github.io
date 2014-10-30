@@ -1,0 +1,18 @@
+<h2 id="ruby-install">1.安装ruby-install工具</h2>
+<p><code>console
+$ tar -xzvf ruby-install-0.5.0.tar.gz
+$ cd ruby-install-0.5.0/
+$ sudo make install
+</code></p>
+
+<h2 id="ruby">2.安装Ruby的稳定版本</h2>
+<p><code>console
+$ ruby-install ruby
+</code></p>
+
+<h2 id="path">3.配置环境变量PATH</h2>
+<p>上述步骤默认将ruby安装在了用户主目录下，需要将ruby安装目录下的bin加入PATh环境变量。修改/etc/profile文件即可，在该文件末尾加入以下代码：</p>
+
+<p><code>bash
+export PATH=$RUBY_INSTALL/bin:$PATH
+</code></p>
