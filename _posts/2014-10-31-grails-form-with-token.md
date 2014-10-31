@@ -1,0 +1,22 @@
+---
+layout: default
+title: Grails使用token处理表单重复提交
+---
+
+Grails内置对于处理重复提交表单的支持
+
+###在表单标签中：
+
+```html
+<g:form useToken="true" ...>
+```
+
+###controller中：
+
+```groovy
+withForm {
+   // good request
+}.invalidToken {
+   // bad request
+}
+```
