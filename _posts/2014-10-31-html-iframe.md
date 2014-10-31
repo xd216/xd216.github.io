@@ -1,6 +1,6 @@
 ---
 layout: default
-title: HTML <iframe> 标签的 name 属性
+title: HTML iframe 标签的 name 属性
 ---
 
 ###定义和用法
