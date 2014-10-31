@@ -1,0 +1,108 @@
+<h3 id="section">简介</h3>
+
+<p>REST本身并不是一门技术,而是一种网络架构.它使用XML或JSON作为通信媒介,使用四种HTTP方法:<code>GET</code>,<code>POST</code>,<code>PUT</code>,<code>DETELE</code></p>
+
+<p>每一种HTTP方法对应一个action类型:
+    * GET: 获取数据
+    * POST: 创造数据
+    * PUT: 更新数据
+    * DETELE: 删除数据</p>
+
+<h3 id="restdomain">创建REST风格的Domain</h3>
+
+<p>```groovy
+import grails.rest.*
+@Resource(uri=’/books’)
+class Book {</p>
+
+<pre><code>String title
+
+static constraints = {
+    title blank:false
+} } ```
+</code></pre>
+
+<p>可以在<code>BootStrap.groovy</code>中添加一些测试数据:  </p>
+
+<p><code>groovy
+def init = { servletContext -&gt;
+        new Book(title:"The Stand").save()
+        new Book(title:"The Shining").save()
+    }
+</code></p>
+
+<h3 id="rest">链接REST风格的资源</h3>
+
+<p><code>html
+&lt;g:link resource="${book}"&gt;My link&lt;/g:link&gt;
+</code></p>
+
+<p>DELETE比较特殊,这样:</p>
+
+<p><code>html
+    &lt;form action="/book/2" method="post"&gt;
+ 	  &lt;input type="hidden" name="_method" value="DELETE"/&gt;
+    &lt;/form&gt;
+</code></p>
+
+<h3 id="namespacerest">从不同的namespace访问REST风格的资源</h3>
+
+<p>修改URLmapping</p>
+
+<p><code>groovy
+"/books/v1"(resources:"book", namespace:'v1')
+"/books/v2"(resources:"book", namespace:'v2')
+</code></p>
+
+<p>可以映射到不同包下面的多个同名Controller</p>
+
+<p>```groovy
+package myapp.v1
+class BookController {
+    static namespace = ‘v1’
+}</p>
+
+<p>package myapp.v2</p>
+
+<p>class BookController {
+    static namespace = ‘v2’
+}
+```</p>
+
+<h3 id="restcontroller">创建REST风格的Controller</h3>
+
+<ul>
+  <li>创建controller类</li>
+  <li>添加import和注解
+  <code>groovy
+  import grails.transaction.*
+  import static org.springframework.http.HttpStatus.*
+  import static org.springframework.http.HttpMethod.*
+  @Transactional(readOnly = true)
+  class BookController {
+      …
+  }
+ </code></li>
+  <li>每一个HTTP方法对应一个URL,同时对应一个Controller中的action方法</li>
+</ul>
+
+<p>GET     /books  	index</p>
+
+<p>GET	    /books/${id}	show</p>
+
+<p>GET	    /books/create	  create</p>
+
+<p>GET	    /books/${id}/edit	edit</p>
+
+<p>POST	/books	    save</p>
+
+<p>PUT	    /books/${id}	update</p>
+
+<p>DELETE	/books/${id}	delete</p>
+
+<p>要一一实现这些action方法,用于处理HTTP请求</p>
+
+<p>用到<code>respond</code>方法,参考[http://grails.org/doc/latest/ref/Controllers/respond.html]</p>
+
+<p>参考[http://grails.org/doc/latest/guide/webServices.html#restControllersStepByStep]</p>
+

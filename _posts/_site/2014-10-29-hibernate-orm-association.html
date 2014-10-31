@@ -1,0 +1,126 @@
+<p>对于良好的数据库设计,数据表不是单独存在的,彼此之间总会存在一些关系,使用ORM的关联关系映射,可以将逻辑上实体与实体之间的关系自动映射为数据库中表之间的关系.</p>
+
+<h2 id="manytooneonetoone">ManyToOne和OneToOne</h2>
+
+<p><code>@ManyToOne</code>: 若干个实体都可以指向目标实体. <strong>不同于OneToMany之处在于所站的角度不同,映射成的数据库表结构是相同的</strong></p>
+
+<p><code>@OneToOne</code>: 只有一个实体可以指向目标实体.</p>
+
+<p>单向:只能从拥有者指向被拥有者.</p>
+
+<p>在数据库中是以外键的形式被映射的.</p>
+
+<p>owning中有一个引用owned主键的外键.本例中是:Person中有一个名为<code>Address_Id</code>的外键.</p>
+
+<p><strong>Owning side</strong></p>
+
+<p>```java
+@Entity 
+ public class Person implements Serializable { 
+    private static final long serialVersionUID = 1L; 
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+    private Long id; 
+    @OneToOne 
+    private Address address; </p>
+
+<p>// 　 Getters &amp; Setters 
+ }
+```</p>
+
+<p><strong>Owned side(单向)</strong></p>
+
+<p>```java
+@Entity 
+ public class Address implements Serializable { 
+    private static final long serialVersionUID = 1L; 
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+    private Long id; </p>
+
+<p>// Gettes&amp; Setters 
+ }
+```</p>
+
+<p><strong>Owned side(双向)</strong></p>
+
+<p>```java
+@Entity 
+ public class Address implements Serializable { 
+    private static final long serialVersionUID = 1L; 
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+    private Long id; </p>
+
+<pre><code>@OneToOne(mappedBy = "address") 
+private Person person; 
+ 
+// Gettes&amp; Setters 
+</code></pre>
+
+<p>}
+```</p>
+
+<h2 id="onetomany">OneToMany</h2>
+
+<p>一对多关联关系,在数据库中默认以中间表的方式映射,也可以使用外键的方式.</p>
+
+<p>中间表的名称规则: owning+下划线+owned</p>
+
+<p><img src="/images/o2m.jpg" alt="" /></p>
+
+<h2 id="manytomany">ManyToMany</h2>
+
+<p>多对多关系在数据库中只能通过中间表方式映射.</p>
+
+<h3 id="section">单向</h3>
+
+<p><strong>owning side</strong></p>
+
+<p>```java
+@Entity 
+ public class Teacher implements Serializable { </p>
+
+<pre><code>private static final long serialVersionUID = 1L; 
+@Id 
+@GeneratedValue(strategy = GenerationType.AUTO) 
+private Long id; 
+
+@ManyToMany 
+private List&lt;Student&gt; students; 
+// Getters  and  Setters   } ```
+</code></pre>
+
+<p><strong>owned side</strong></p>
+
+<p>```java
+@Entity 
+ public class Student implements Serializable { 
+    private static final long serialVersionUID = 1L; 
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+    private Long id; </p>
+
+<p>//Getters  and  Setters 
+ }
+```</p>
+
+<h3 id="section-1">双向</h3>
+
+<p><strong>owned side</strong></p>
+
+<p>```java
+@Entity 
+ public class Student implements Serializable { 
+    private static final long serialVersionUID = 1L; 
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+    private Long id; </p>
+
+<pre><code>@ManyToMany(mappedBy = "students") 
+private List&lt;Teacher&gt; teachers; 
+//Getters  and  Setters   } ```
+</code></pre>
+
+<p><img src="/images/m2m.jpg" alt="" /></p>
+
