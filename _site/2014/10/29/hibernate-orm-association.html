@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <title>Xd216 Lab Blog</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Xd216的博客</h1>
+        
+        <a href="https://github.com/xd216" class="button"><small>Follow me on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">        
+        <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
+hibernate ORM 关联关系映射-基础 
+        </h1>
+<p>对于良好的数据库设计,数据表不是单独存在的,彼此之间总会存在一些关系,使用ORM的关联关系映射,可以将逻辑上实体与实体之间的关系自动映射为数据库中表之间的关系.</p>
+
+<h2>ManyToOne和OneToOne</h2>
+
+<p><code>@ManyToOne</code>: 若干个实体都可以指向目标实体. <strong>不同于OneToMany之处在于所站的角度不同,映射成的数据库表结构是相同的</strong></p>
+
+<p><code>@OneToOne</code>: 只有一个实体可以指向目标实体.</p>
+
+<p>单向:只能从拥有者指向被拥有者.</p>
+
+<p>在数据库中是以外键的形式被映射的.</p>
+
+<p>owning中有一个引用owned主键的外键.本例中是:Person中有一个名为<code>Address_Id</code>的外键.</p>
+
+<p><strong>Owning side</strong></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Entity</span> 
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span> 
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span> 
+    <span class="nd">@Id</span> 
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span> 
+    <span class="nd">@OneToOne</span> 
+    <span class="kd">private</span> <span class="n">Address</span> <span class="n">address</span><span class="o">;</span> 
+
+ <span class="c1">// 　 Getters &amp; Setters </span>
+ <span class="o">}</span>
+</code></pre></div>
+<p><strong>Owned side(单向)</strong></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Entity</span> 
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Address</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span> 
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span> 
+    <span class="nd">@Id</span> 
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span> 
+
+ <span class="c1">// Gettes&amp; Setters </span>
+ <span class="o">}</span>
+</code></pre></div>
+<p><strong>Owned side(双向)</strong></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Entity</span> 
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Address</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span> 
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span> 
+    <span class="nd">@Id</span> 
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span> 
+
+    <span class="nd">@OneToOne</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">&quot;address&quot;</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Person</span> <span class="n">person</span><span class="o">;</span> 
+
+    <span class="c1">// Gettes&amp; Setters </span>
+
+ <span class="o">}</span>
+</code></pre></div>
+<h2>OneToMany</h2>
+
+<p>一对多关联关系,在数据库中默认以中间表的方式映射,也可以使用外键的方式.</p>
+
+<p>中间表的名称规则: owning+下划线+owned</p>
+
+<p><img src="/images/o2m.jpg" alt=""></p>
+
+<h2>ManyToMany</h2>
+
+<p>多对多关系在数据库中只能通过中间表方式映射.</p>
+
+<h3>单向</h3>
+
+<p><strong>owning side</strong></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Entity</span> 
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Teacher</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span> 
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span> 
+    <span class="nd">@Id</span> 
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span> 
+
+    <span class="nd">@ManyToMany</span> 
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span> <span class="n">students</span><span class="o">;</span> 
+    <span class="c1">// Getters  and  Setters </span>
+ <span class="o">}</span>
+</code></pre></div>
+<p><strong>owned side</strong></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Entity</span> 
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span> 
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span> 
+    <span class="nd">@Id</span> 
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span> 
+
+   <span class="c1">//Getters  and  Setters </span>
+ <span class="o">}</span>
+</code></pre></div>
+<h3>双向</h3>
+
+<p><strong>owned side</strong></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Entity</span> 
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span> 
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span> 
+    <span class="nd">@Id</span> 
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span> 
+
+    <span class="nd">@ManyToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">&quot;students&quot;</span><span class="o">)</span> 
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Teacher</span><span class="o">&gt;</span> <span class="n">teachers</span><span class="o">;</span> 
+    <span class="c1">//Getters  and  Setters </span>
+ <span class="o">}</span>
+</code></pre></div>
+<p><img src="/images/m2m.jpg" alt=""></p>
+
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>

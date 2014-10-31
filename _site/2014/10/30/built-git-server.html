@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print">
+    <title>Xd216 Lab Blog</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Xd216的博客</h1>
+        
+        <a href="https://github.com/xd216" class="button"><small>Follow me on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">        
+        <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
+搭建git服务器 
+        </h1>
+<h3>添加用户<code>git</code></h3>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> sudo adduser git
+</code></pre></div>
+<h3>收集登录证书（<code>su</code>之后的操作均以git用户的身份进行）</h3>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> su git
+<span class="gp">$</span> <span class="nb">cd</span>
+<span class="gp">$</span><span class="nb"> </span>mkdir .ssh
+</code></pre></div>
+<hr>
+
+<p>接下来，把开发者的<code>SSH</code>公钥添加到这个用户的<code>authorized_keys</code>文件中。假设你通过电邮收到了几个公钥并存到了临时文件里。重复一下，公钥大致看起来是这个样子：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> cat /tmp/id_rsa.john.pub
+<span class="go">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4L</span>
+<span class="go">ojG6rs6hPB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4k</span>
+<span class="go">Yjh6541NYsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9Ez</span>
+<span class="go">Sdfd8AcCIicTDWbqLAcU4UpkaX8KyGlLwsNuuGztobF8m72ALC/nLF6JLtPofwFBlgc+myiv</span>
+<span class="go">O7TCUSBdLQlgMVOFq1I2uPWQOkOWQAHukEOmfjy2jctxSDBQ220ymjaNsHT4kgtZg2AYYgPq</span>
+<span class="go">dAv8JggJICUvax2T9va5 gsg-keypair</span>
+</code></pre></div>
+<p>只要把它们逐个追加到<code>authorized_keys</code>文件尾部即可：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> cat /tmp/id_rsa.john.pub &gt;&gt; ~/.ssh/authorized_keys
+<span class="gp">$</span> cat /tmp/id_rsa.josie.pub &gt;&gt; ~/.ssh/authorized_keys
+<span class="gp">$</span> cat /tmp/id_rsa.jessica.pub &gt;&gt; ~/.ssh/authorized_keys
+</code></pre></div>
+<h3>创建裸仓库</h3>
+
+<p>用<code>--bare</code>选项运行<code>git init</code>来建立一个裸仓库，这会初始化一个不包含工作目录的仓库：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> <span class="nb">cd</span> /opt/git
+<span class="gp">$</span> mkdir project.git
+<span class="gp">$</span> <span class="nb">cd </span>project.git
+<span class="gp">$</span> git --bare init
+</code></pre></div>
+<h3>第一次推送</h3>
+
+<p>这时，Join，Josie 或者 Jessica 就可以把它加为远程仓库，推送一个分支，从而把第一个版本的项目文件上传到仓库里了。值得注意的是，每次添加一个新项目都需要通过 shell 登入主机并创建一个裸仓库目录。我们不妨以 gitserver 作为 git 用户及项目仓库所在的主机名。如果在网络内部运行该主机，并在 DNS 中设定 gitserver 指向该主机，那么以下这些命令都是可用的：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">#</span> 在 John 的电脑上
+<span class="gp">$</span> <span class="nb">cd </span>myproject
+<span class="gp">$</span> git init
+<span class="gp">$</span> git add .
+<span class="gp">$</span> git commit -m <span class="s1">&#39;initial commit&#39;</span>
+<span class="gp">$</span> git remote add origin git@gitserver:/opt/git/project.git
+<span class="gp">$</span> git push origin master
+</code></pre></div>
+<h3>其他人进行克隆和推送</h3>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> git clone git@gitserver:/opt/git/project.git
+<span class="gp">$</span> <span class="nb">cd </span>project
+<span class="gp">$</span> vim README
+<span class="gp">$</span> git commit -am <span class="s1">&#39;fix for the README file&#39;</span>
+<span class="gp">$</span> git push origin master
+</code></pre></div>
+<h3>额外的防范措施</h3>
+
+<p>可以用<code>Git</code>自带的<code>git-shell</code>工具限制<code>git</code>用户的活动范围。只要把它设为<code>git</code>用户登入的<code>shell</code>，那么该用户就无法使用普通的<code>bash</code>或者<code>csh</code>什么的<code>shell</code>程序。编辑<code>/etc/passwd</code>文件：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> sudo vim /etc/passwd
+</code></pre></div>
+<p>在文件末尾，你应该能找到类似这样的行：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">git:x:1000:1000::/home/git:/bin/sh</span>
+</code></pre></div>
+<p>把<code>bin/sh</code>改为<code>/usr/bin/git-shell</code>（或者用<code>which git-shell</code>查看它的实际安装路径）。该行修改后的样子如下：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">git:x:1000:1000::/home/git:/usr/bin/git-shell</span>
+</code></pre></div>
+<p>现在<code>git</code>用户只能用 SSH 连接来推送和获取 Git 仓库，而不能直接使用主机 shell。尝试普通 SSH 登录的话，会看到下面这样的拒绝信息：</p>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> ssh git@gitserver
+<span class="go">fatal: What do you think I am? A shell?</span>
+<span class="go">Connection to gitserver closed.</span>
+</code></pre></div>
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
