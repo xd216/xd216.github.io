@@ -25,42 +25,26 @@
         <section id="main-content">        
         <h1>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
-bash基础 
+HTML <iframe> 标签的 name 属性 
         </h1>
-<h3>变量的测试和替换</h3>
+<h3>定义和用法</h3>
 
 <ul>
-<li><code>var=${str-expr}</code> </li>
+<li>name 属性规定 iframe 的名称。</li>
+<li>用于在 JavaScript 中引用元素，或者作为<strong>链接的目标</strong></li>
 </ul>
 
-<blockquote>
-<p>若str没有设置，则将<code>var</code>设置为expr；若str已设置（包括空字符串），则将<code>var</code>设置为<code>str</code></p>
-</blockquote>
+<h3>语法</h3>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<h3>实例</h3>
 
-<ul>
-<li><code>var=${str=expr}</code></li>
-</ul>
-
-<blockquote>
-<p>若<code>str</code>未设置，则将<code>str</code><strong>也</strong>设置为<code>expr</code></p>
-</blockquote>
-
-<ul>
-<li><code>var=${str?msg}</code></li>
-</ul>
-
-<blockquote>
-<p>若<code>str</code>未设置，则显示出错信息msg</p>
-</blockquote>
-
-<h3>数组</h3>
-
-<ul>
-<li><code>arrayname[index]=value</code> 隐式声明</li>
-<li><code>declare -a arrayname</code> 显示声明</li>
-<li><code>arrayname=(value1 value2 ... valueN)</code> 显示初始化；其中value的一般形式为<code>[index=]value</code>，<code>index</code>是可选的，若不指定则索引值将递增赋值</li>
-</ul>
-
+<p><strong>作为链接目标</strong>的 iframe：</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">&quot;demo_iframe.htm&quot;</span> <span class="na">name=</span><span class="s">&quot;iframe_a&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p&gt;</span>Your browser does not support iframes.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.w3school.com.cn&quot;</span> <span class="na">target=</span><span class="s">&quot;iframe_a&quot;</span><span class="nt">&gt;</span>W3School.com.cn<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
         </section>
 
         <aside id="sidebar">
