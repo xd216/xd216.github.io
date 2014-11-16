@@ -28,42 +28,32 @@
 shell变量的设置规则 
         </h1>
 <ol>
-<li><p>变量和变量内容以一个等号“=”来连接，如下所示：
-<code>console
-myname=newbie
-</code></p></li>
-<li><p>等号两边不能直接接空格符，如下所示都是错误的：
-<code>bash
-myname = newbie
-myname=newbie again
-</code></p></li>
-<li><p>变量名称只能是英文字母和数字，但不能以数字开头
-<code>shell
-2myname=newbie
-</code></p></li>
-<li><p>变量内容若有空格符，可使用单引号或双引号将其括起来，但是：</p></li>
-</ol>
+<li><p>变量和变量内容以一个等号“=”来连接，如下所示：</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">myname</span><span class="o">=</span>newbie
+</code></pre></div></li>
+<li><p>等号两边不能直接接空格符，如下所示都是错误的：</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">myname</span> <span class="o">=</span> newbie
+<span class="nv">myname</span><span class="o">=</span>newbie again
+</code></pre></div></li>
+<li><p>变量名称只能是英文字母和数字，但不能以数字开头</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">2myname</span><span class="o">=</span>newbie
+</code></pre></div></li>
+<li><p>变量内容若有空格符，可使用单引号或双引号将其括起来，但是：</p>
 
 <ul>
 <li>双引号内的特殊字符，如$等，可以保有原有的特性</li>
 <li>单引号内的特殊字符则仍为一般字符（纯文本）</li>
-</ul>
-
-<ol>
-<li>可用转义字符<code>\</code>将特殊字符转义为普通字符</li>
-<li>命令内嵌（即A命令需引用B命令的信息）时，可以使用两种方法：<code>cmd</code>或者<code>$(cmd)</code></li>
-</ol>
+</ul></li>
+<li><p>可用转义字符<code>\</code>将特殊字符转义为普通字符</p></li>
+<li><p>命令内嵌（即A命令需引用B命令的信息）时，可以使用两种方法：<code>cmd</code>或者<code>$(cmd)</code></p>
 
 <ul>
 <li>引用变量内容时使用花括号，即<code>${var}</code></li>
-</ul>
-
-<ol>
-<li>增加变量内容时，可用<code>&quot;$var&quot;</code>或者<code>${var}</code>实现累加：
-<code>shell
-PATH=&quot;$PATH&quot;:/home/bin
-PATH=${PATH}:/home/bin
-</code></li>
+</ul></li>
+<li><p>增加变量内容时，可用<code>&quot;$var&quot;</code>或者<code>${var}</code>实现累加：</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$PATH&quot;</span>:/home/bin
+<span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>:/home/bin
+</code></pre></div></li>
 </ol>
 
         </section>
