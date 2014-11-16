@@ -25,26 +25,47 @@
         <section id="main-content">        
         <h1>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
-HTML iframe 标签的 name 属性 
+shell变量的设置规则 
         </h1>
-<h3>定义和用法</h3>
+<ol>
+<li><p>变量和变量内容以一个等号“=”来连接，如下所示：
+<code>console
+myname=newbie
+</code></p></li>
+<li><p>等号两边不能直接接空格符，如下所示都是错误的：
+<code>bash
+myname = newbie
+myname=newbie again
+</code></p></li>
+<li><p>变量名称只能是英文字母和数字，但不能以数字开头
+<code>shell
+2myname=newbie
+</code></p></li>
+<li><p>变量内容若有空格符，可使用单引号或双引号将其括起来，但是：</p></li>
+</ol>
 
 <ul>
-<li>name 属性规定 iframe 的名称。</li>
-<li>用于在 JavaScript 中引用元素，或者作为<strong>链接的目标</strong></li>
+<li>双引号内的特殊字符，如$等，可以保有原有的特性</li>
+<li>单引号内的特殊字符则仍为一般字符（纯文本）</li>
 </ul>
 
-<h3>语法</h3>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-<h3>实例</h3>
+<ol>
+<li>可用转义字符<code>\</code>将特殊字符转义为普通字符</li>
+<li>命令内嵌（即A命令需引用B命令的信息）时，可以使用两种方法：<code>cmd</code>或者<code>$(cmd)</code></li>
+</ol>
 
-<p><strong>作为链接目标</strong>的 iframe：</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">&quot;demo_iframe.htm&quot;</span> <span class="na">name=</span><span class="s">&quot;iframe_a&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;p&gt;</span>Your browser does not support iframes.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/iframe&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.w3school.com.cn&quot;</span> <span class="na">target=</span><span class="s">&quot;iframe_a&quot;</span><span class="nt">&gt;</span>W3School.com.cn<span class="nt">&lt;/a&gt;</span>
-</code></pre></div>
+<ul>
+<li>引用变量内容时使用花括号，即<code>${var}</code></li>
+</ul>
+
+<ol>
+<li>增加变量内容时，可用<code>&quot;$var&quot;</code>或者<code>${var}</code>实现累加：
+<code>shell
+PATH=&quot;$PATH&quot;:/home/bin
+PATH=${PATH}:/home/bin
+</code></li>
+</ol>
+
         </section>
 
         <aside id="sidebar">

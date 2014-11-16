@@ -25,26 +25,13 @@
         <section id="main-content">        
         <h1>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> 
-HTML iframe 标签的 name 属性 
+常用的SQL语句 
         </h1>
-<h3>定义和用法</h3>
-
-<ul>
-<li>name 属性规定 iframe 的名称。</li>
-<li>用于在 JavaScript 中引用元素，或者作为<strong>链接的目标</strong></li>
-</ul>
-
-<h3>语法</h3>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span><span class="nt">&gt;</span>
+<h3>查询</h3>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">table_name</span> <span class="k">where</span> <span class="n">id</span> <span class="k">in</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
 </code></pre></div>
-<h3>实例</h3>
+<p>检索某几条数据</p>
 
-<p><strong>作为链接目标</strong>的 iframe：</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">&quot;demo_iframe.htm&quot;</span> <span class="na">name=</span><span class="s">&quot;iframe_a&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;p&gt;</span>Your browser does not support iframes.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/iframe&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.w3school.com.cn&quot;</span> <span class="na">target=</span><span class="s">&quot;iframe_a&quot;</span><span class="nt">&gt;</span>W3School.com.cn<span class="nt">&lt;/a&gt;</span>
-</code></pre></div>
         </section>
 
         <aside id="sidebar">
