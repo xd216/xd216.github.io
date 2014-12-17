@@ -40,7 +40,7 @@ $ cat /tmp/id_rsa.jessica.pub >> ~/.ssh/authorized_keys
 
 ###创建裸仓库
 
-用`--bare`选项运行`git init`来建立一个裸仓库，这会初始化一个不包含工作目录的仓库：
+用`--bare`选项运行`git init`来建立一个裸仓库（在git用户主目录下建立目录亦可），这会初始化一个不包含工作目录的仓库：
 
 ```console
 $ cd /opt/git
