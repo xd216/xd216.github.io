@@ -10,12 +10,12 @@ markdown: redcarpet
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : 西电216实验室
-tagline: 
+title : Equation 85
+tagline: 不积跬步，无以至千里！
 author :
-  name : waitingliu
-  email : waitinglovedream@gmail.com
-  github : waitingliu
+  name : Frank Chen
+  email : frank85chen@gmail.com
+  github : equation85
   #twitter : username
   #feedburner : feedname
 
@@ -27,7 +27,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://xd216.github.io
+production_url : http://equation85.github.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -83,7 +83,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : xd216
+      short_name : equation85
     livefyre :
       site_id : 123
     intensedebate :
