@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: ubuntu 14.10 安装搜狗输入法的问题
+catigories: Linux
+tags: ubuntu
 ---
 
 ###1. `fcitx`依赖关系不满足

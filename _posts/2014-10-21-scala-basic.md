@@ -1,7 +1,7 @@
 ---
 layout: post
 title: scala基础
-catigories: 编程基础
+categories: 编程基础
 tags: scala
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: bash数组的使用
-catigories: Linux
+categories: Linux
 tags: bash
 ---
 

@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: grails2.4实用新特性
+catigories: Web开发
+tags: grails
 ---
 
 ###添加资源的方便之门

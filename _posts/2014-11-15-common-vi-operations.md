@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 常用vi命令/操作
-catigories: Linux
+categories: Linux
 tags: vi
 ---
 

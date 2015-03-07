@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 利用getopt函数对命令行参数进行解析
-catigories: Linux
+categories: Linux
 tags: getopt
 ---
 

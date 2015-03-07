@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JekyII简介
-catigories: 其他
+categories: 其他
 tags: JekyII
 ---
 

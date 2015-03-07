@@ -1,7 +1,7 @@
 ---
 layout: post
 title: grails 修改运行时服务器端口
-catigories: Web开发
+categories: Web开发
 tags: grails
 ---
 

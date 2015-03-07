@@ -1,7 +1,7 @@
 ---
 layout: post
 title: git分支协作
-catigories: 其他
+categories: 其他
 tags: git
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTML iframe 标签的 name 属性
-catigories: Web开发
+categories: Web开发
 tags: iframe
 ---
 

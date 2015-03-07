@@ -1,7 +1,7 @@
 ---
 layout: post
 title: markdown点滴
-catigories: Web开发
+categories: Web开发
 tags: markdown
 ---
 

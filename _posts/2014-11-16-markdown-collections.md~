@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: markdown点滴
+catigories: Web开发
+tags: markdown
 ---
 
 ###在有序列表项目中嵌入代码区块：

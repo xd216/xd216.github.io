@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 搭建git服务器
-catigories: 其他
+categories: 其他
 tags: git
 ---
 

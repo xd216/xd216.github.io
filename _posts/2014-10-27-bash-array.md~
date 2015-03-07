@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: bash数组的使用
+catigories: Linux
+tags: bash
 ---
 
 利用`ls`命令的输出构建数组时，有两种写法：

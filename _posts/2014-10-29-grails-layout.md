@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用Grails layout创建页面模版,统一页面风格
-catigories: Web开发
+categories: Web开发
 tags: grails
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu中安装Ruby
-catigories: Linux
+categories: Linux
 tags: Ruby
 ---
 

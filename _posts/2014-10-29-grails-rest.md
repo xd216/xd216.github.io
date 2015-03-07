@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Grails中的REST
-catigories: Web开发
+categories: Web开发
 tags: grails
 ---
 

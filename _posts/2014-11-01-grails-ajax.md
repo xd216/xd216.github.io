@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Grails中使用ajax异步获取数据
-catigories: Web开发
+categories: Web开发
 tags: grails
 ---
 

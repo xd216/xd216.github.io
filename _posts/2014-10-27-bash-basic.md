@@ -1,7 +1,7 @@
 ---
 layout: post
 title: bash基础
-catigories: Linux
+categories: Linux
 tags: bash
 ---
 

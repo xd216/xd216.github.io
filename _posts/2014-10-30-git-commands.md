@@ -1,7 +1,7 @@
 ---
 layout: post
 title: git常用命令
-catigories: 其他
+categories: 其他
 tags: git
 ---
 

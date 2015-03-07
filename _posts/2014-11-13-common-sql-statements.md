@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 常用的SQL语句
-catigories: 数据库
+categories: 数据库
 tags: sql
 ---
 

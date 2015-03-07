@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Grails-GORM-CRUD
-catigories: Web开发
+categories: Web开发
 tags: grails
 ---
 

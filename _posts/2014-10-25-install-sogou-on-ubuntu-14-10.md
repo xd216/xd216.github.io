@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ubuntu 14.10 安装搜狗输入法的问题
-catigories: Linux
+categories: Linux
 tags: ubuntu
 ---
 

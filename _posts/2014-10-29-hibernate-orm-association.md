@@ -1,7 +1,7 @@
 ---
 layout: post
 title: hibernate ORM 关联关系映射-基础
-catigories: Web开发
+categories: Web开发
 tags: hibernate
 ---
 

@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: scala基础
+catigories: 编程基础
+tags: scala
 ---
 
 ##常量与变量

@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: grails 修改运行时服务器端口
+catigories: Web开发
+tags: grails
 ---
 
 ###在命令行使用-Dserver.port=xxxx指定运行端口

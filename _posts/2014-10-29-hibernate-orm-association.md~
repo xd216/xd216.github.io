@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: hibernate ORM 关联关系映射-基础
+catigories: Web开发
+tags: hibernate
 ---
 
 对于良好的数据库设计,数据表不是单独存在的,彼此之间总会存在一些关系,使用ORM的关联关系映射,可以将逻辑上实体与实体之间的关系自动映射为数据库中表之间的关系.

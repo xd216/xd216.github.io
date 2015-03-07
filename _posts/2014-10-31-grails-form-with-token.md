@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Grails使用token处理表单重复提交
-catigories: Web开发
+categories: Web开发
 tags: grails
 ---
 

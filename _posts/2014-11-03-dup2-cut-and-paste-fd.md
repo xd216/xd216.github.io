@@ -1,7 +1,7 @@
 ---
 layout: post
 title: dup2实现“剪切”文件描述符
-catigories: Linux
+categories: Linux
 tags: dup2
 ---
 

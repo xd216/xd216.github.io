@@ -1,7 +1,7 @@
 ---
 layout: post
 title: scala 基本控制结构
-catigories: 编程基础
+categories: 编程基础
 tags: scala
 ---
 
