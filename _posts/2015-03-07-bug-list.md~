@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: post
 title: bug列表
+categories: 工作计划
+tags: bug,工作
 ---
 
 * 加验证码
