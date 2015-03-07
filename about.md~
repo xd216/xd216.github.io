@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "About"
+title: "About Us"
 ---
 {% include JB/setup %}
 
-This page is under construction.
+我们是来自银河系的西电216实验室,计算机专业研究僧,热爱分享技术
