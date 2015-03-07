@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "About"
+title: "关于我们"
 ---
 {% include JB/setup %}
 
-This page is under construction.
+哈哈哈哈哈哈

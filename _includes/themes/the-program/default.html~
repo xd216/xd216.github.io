@@ -22,7 +22,7 @@
 			<div class="unit-inner unit-head-inner">
 				<nav class="nav-global">
 					<ul>
-						<li class="logo"><a href="/">{{ page.title }}</a></li>
+						<li class="logo"><a href="/">{{ site.title }}</a></li>
 						<li class="archive"><a href="/archive.html">archive</a></li>
 						<li class="category"><a href="/categories.html">categories</a></li>
 						<li class="page"><a href="/pages.html">pages</a></li>
@@ -37,8 +37,8 @@
 						    <input type="hidden" name="ie" value="UTF-8" />
 						    <input type="hidden" name="oe" value="UTF-8" />
 						    <input type="hidden" name="hl" value="zh-CN" />
-						    <input type="hidden" name="domains" value="http://equation85.github.com" />
-						    <input type="hidden" name="sitesearch" value="http://equation85.github.com" />
+						    <input type="hidden" name="domains" value="http://xd216.github.io" />
+						    <input type="hidden" name="sitesearch" value="http://xd216.github.io" />
 						</li>
 					</ul>
 				</nav>
