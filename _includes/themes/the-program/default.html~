@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>{{ page.title }}技术博客</title>
+	<title>{{ page.title }}</title>
 	<meta name="author" content="{{ site.author.name }}">
 	<link href='{{ ASSET_PATH }}/css/style.css' rel="stylesheet" media="all">
 	<link href="http://feeds.feedburner.com/{{ site.author.feedbaname }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
@@ -23,23 +23,11 @@
 				<nav class="nav-global">
 					<ul>
 						<li class="logo"><a href="/">{{ site.title }}</a></li>
-						<li class="archive"><a href="/archive.html">archive</a></li>
-						<li class="category"><a href="/categories.html">categories</a></li>
+						<li class="archive"><a href="/archive.html">归档</a></li>
+						<li class="category"><a href="/categories.html">分类</a></li>
 						<li class="page"><a href="/pages.html">pages</a></li>
-						<li class="tag"><a href="/tags.html">tags</a></li>
-						<li class="about"><a href="/about.html">about</a></li>
-						<li class="search">
-						    <form method="get" action="http://www.google.com/search" target="google_window">
-						    <div>	
-						  	<input type="text" value="Search..." name="query" id="search-box" onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}">
-						  	<input type="submit" name=”btnG” id="search-submit" value="Go">
-						    </div>
-						    <input type="hidden" name="ie" value="UTF-8" />
-						    <input type="hidden" name="oe" value="UTF-8" />
-						    <input type="hidden" name="hl" value="zh-CN" />
-						    <input type="hidden" name="domains" value="http://xd216.github.io" />
-						    <input type="hidden" name="sitesearch" value="http://xd216.github.io" />
-						</li>
+						<li class="tag"><a href="/tags.html">标签</a></li>
+						<li class="about"><a href="/about.html">关于我们</a></li>
 					</ul>
 				</nav>
 			</div><!-- unit-inner -->

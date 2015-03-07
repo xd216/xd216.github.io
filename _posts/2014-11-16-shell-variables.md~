@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: shell变量的设置规则
 categories: shell编程
 tags: shell
