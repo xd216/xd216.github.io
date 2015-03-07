@@ -1,7 +1,7 @@
 ---
 layout: post
 title: shell变量的设置规则
-categories: shell编程
+categories: Linux
 tags: shell
 ---
 

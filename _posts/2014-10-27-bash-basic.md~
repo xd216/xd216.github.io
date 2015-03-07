@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: default
 title: bash基础
-catigories: Linux
-tags: bash
 ---
 
 ###变量的测试和替换

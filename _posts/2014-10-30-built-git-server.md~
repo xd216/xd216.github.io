@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: default
 title: 搭建git服务器
-catigories: 其他
-tags: git
 ---
 
 ###添加用户`git`

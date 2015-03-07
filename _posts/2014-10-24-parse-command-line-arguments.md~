@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: default
 title: 利用getopt函数对命令行参数进行解析
-catigories: Linux
-tags: getopt
 ---
 
 ###函数原型：

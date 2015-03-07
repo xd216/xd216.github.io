@@ -1,8 +1,6 @@
 ---
-layout: post
+layout: default
 title: Grails-GORM-CRUD
-catigories: Web开发
-tags: grails
 ---
 
 ##save|update
