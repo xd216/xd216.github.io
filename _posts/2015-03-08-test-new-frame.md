@@ -1,6 +1,6 @@
 ---
 layout: post
-title: github blog 分页
+title: github博客分页
 categories: Web开发
 tags: github
 ---
