@@ -1,6 +1,6 @@
 ---
-layout: page
-title: 西电216实验室技术博客
+layout: default
+title: 西电216实验室
 ---
 {% include JB/setup %}
 
