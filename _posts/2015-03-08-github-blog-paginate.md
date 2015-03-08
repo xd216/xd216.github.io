@@ -1,9 +1,26 @@
 ---
-layout: page
-title: 西电216实验室
+layout: post
+title: github blog 分页
+categories: Web开发
+tags: github
 ---
-{% include JB/setup %}
 
+###1.修改`_config.yml`
+
+添加分页设置
+
+```yml
+paginate: 18
+paginate_path: "blog/page:num"
+```
+如果此文件中包含permalink设置,将其去掉.
+
+###2.修改`index.md`文件
+
+将md后缀名修改为html,分页只支持HTML格式
+
+修改内容
+```html
 <ul class="posts">
   {% for post in paginator.posts %}
     <li><span>{{ post.date | date: "%F" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
@@ -37,3 +54,4 @@ title: 西电216实验室
 {% endif %}
 <br/>
 
+```
