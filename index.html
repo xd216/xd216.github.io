@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: 西电216实验室
 ---
 {% include JB/setup %}
@@ -8,7 +8,7 @@ title: 西电216实验室
 
 <ul class="posts">
   {% for post in paginator.posts %}
-    <li><span>{{ post.date | date: "%F" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
 
